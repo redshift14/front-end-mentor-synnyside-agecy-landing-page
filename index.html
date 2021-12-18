@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+</head>
+<body>
+  <header>  
+    <nav id="nav">
+      <img src="./images/logo.svg" alt="logo">
+      <ul id="nav-menu">
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="#">Projects</a>
+        </li>
+        <li>
+          <a href="#" class="contact-link">Contact</a>
+        </li>
+      </ul>
+      <button class="nav-button"><img src="./images/icon-hamburger.svg" alt="hamburger"></button>
+    </nav>
+    <h1 class="showcase">we are creatives</h1>
+    <div class="arrow-container">
+      <i><img src="./images/icon-arrow-down.svg" alt="arrow"></i>
+    </div>
+  </header>
+  <main>
+    <section class="cards">
+      <div class="text-card">
+        <h3>Transform your brand</h3>
+        <p>
+          We are a full-service creative agency specializing in helping brands grow fast. 
+          Engage your clients through compelling visuals that do most of the marketing for you.
+        </p>
+        <a href="#" class="learn-more yellow-border-link">learn more</a>
+      </div>
+      <div class="image-card">
+        <img src="./images/desktop/image-transform.jpg" alt="image">
+      </div>
+      <div class="image-card">
+        <img src="./images/desktop/image-stand-out.jpg" alt="image">
+      </div>
+      <div class="text-card">
+        <h3>Stand out to the right audience</h3>
+        <p>
+          Using a collaborative formula of designers, researchers, photographers, videographers, and
+          copywriters, we’ll build and extend your brand in digital places. 
+        </p>
+        <a href="#" class="learn-more red-border-link">learn more</a>
+      </div>
+      <div class="image-text-card cherry">
+        <h5>Graphic Design</h5>
+        <p>
+          Great design makes you memorable. We deliver artwork that underscores your brand message and
+          captures potential clients’ attention.
+        </p>
+      </div>
+      <div class="image-text-card orange">
+        <h5>Photography</h5>
+        <p>
+          Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
+        </p>
+      </div>
+    </section>
+    <section class="testimonianls">
+      <h4>Client testimonials</h4>
+      <div class="testimonianls-cards">
+        <div class="card">
+          <div class="face-icon-container">
+            <img src="./images/image-emily.jpg" alt="Emily">
+          </div>
+          <p>
+            We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
+          </p>
+          <div class="info-text">
+            <h5>Emily R.</h5>
+            <h6>Marketing Director</h6>
+          </div>
+        </div>
+        <div class="card">
+          <div class="face-icon-container">
+            <img src="./images/image-thomas.jpg" alt="Thomas">
+          </div>
+          <p>
+            Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.
+          </p>
+          <div class="info-text">
+            <h5>Thomas S.</h5>
+            <h6>Chief Operating Officer</h6>
+          </div>
+        </div>
+        <div class="card">
+          <div class="face-icon-container">
+            <img src="./images/image-jennie.jpg" alt="Jennie">
+          </div>
+          <p>
+            Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
+          </p>
+          <div class="info-text">
+            <h5>Jennie F.</h5>
+            <h6>Business Owner</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="photos">
+      <div class="photo">
+        <img src="./images/desktop/image-gallery-milkbottles.jpg" alt="milk">
+      </div>
+      <div class="photo">
+        <img src="./images/desktop/image-gallery-orange.jpg" alt="orange">
+      </div>
+      <div class="photo">
+        <img src="./images/desktop/image-gallery-cone.jpg" alt="cone">
+      </div>
+      <div class="photo">
+        <img src="./images/desktop/image-gallery-sugarcubes.jpg" alt="sugar">
+      </div>
+    </section>
+    <footer>
+      <h5>sunnyside</h5>
+      <div class="links">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+      </div>
+      <div class="icons">
+        <i><img src="./images/icon-facebook.svg" alt="facebook"></i>
+        <i><img src="./images/icon-instagram.svg" alt="instagram"></i>
+        <i><img src="./images/icon-twitter.svg" alt="twitter"></i>
+        <i><img src="./images/icon-pinterest.svg" alt="pinterest"></i>
+      </div>
+    </footer>
+  </main>
+  <script>
+    const navButton = document.querySelector('.nav-button');
+    const navMenu = document.getElementById('nav-menu');
+    const nav = document.getElementById('nav');
+    const styleElement = document.head.appendChild(document.createElement('style'));
+    if (window.innerWidth < 630) {
+      console.log('width small');
+      navMenu.style.display = 'none';
+    }
+    navButton.addEventListener('click', function() {
+      if(navMenu.classList.contains('hidden') || navMenu.style.display == 'none') {
+        navMenu.classList.remove('hidden');
+        navMenu.style.display = 'flex';
+        styleElement.innerHTML = '#nav::after {display: block;}';
+      }
+      else  {
+        navMenu.classList.add('hidden');
+        styleElement.innerHTML = '#nav::after {display: none;}';
+      }
+    });
+  </script>
+</body>
+</html>
